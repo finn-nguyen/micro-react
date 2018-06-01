@@ -144,6 +144,19 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
+              plugins: [
+                [
+                  'react-css-modules',
+                  {
+                    "generateScopedName": "[path]___[name]__[local]___[hash:base64:5]",
+                    "filetypes": {
+                      ".scss": {
+                        "syntax": "postcss-scss"
+                      }
+                    }
+                  }
+                ]
+              ],
               
               // This is a feature of `babel-loader` for webpack (not Babel itself).
               // It enables caching results in ./node_modules/.cache/babel-loader/
@@ -164,6 +177,8 @@ module.exports = {
                 loader: require.resolve('css-loader'),
                 options: {
                   importLoaders: 1,
+                  modules: true,
+                  localIdentName: '[path]___[name]__[local]___[hash:base64:5]'
                 },
               },
               {
