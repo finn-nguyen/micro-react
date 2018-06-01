@@ -157,7 +157,7 @@ module.exports = {
           // In production, we use a plugin to extract that CSS to a file, but
           // in development "style" loader enables hot editing of CSS.
           {
-            test: /\.css$/,
+            test: /\.s?css$/,
             use: [
               require.resolve('style-loader'),
               {
@@ -186,19 +186,11 @@ module.exports = {
                   ],
                 },
               },
-            ],
-          },
-          {
-            test: /\.scss$/,
-            use: [
               {
-                loader: "style-loader" // creates style nodes from JS strings
-              },
-              {
-                loader: "css-loader" // translates CSS into CommonJS
-              },
-              {
-                loader: "sass-loader" // compiles Sass to CSS
+                loader: require.resolve('sass-loader'),
+                options: {
+                  importLoaders: 1,
+                },
               }
             ]
           },
