@@ -160,6 +160,15 @@ module.exports = {
                       }
                     }
                   }
+                ],
+                [
+                  'module-resolver',
+                  {
+                    root: [paths.appSrc],
+                    alias: {
+                      components: paths.appSrc + '/components'
+                    }
+                  }
                 ]
               ],
               compact: true,
