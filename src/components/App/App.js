@@ -6,7 +6,7 @@ class App extends Component {
     return (
       <div styleName="App">
         <header styleName="App-header">
-          <img src='/public/images/logo.svg' styleName="App-logo" alt="logo" />
+          <img src='/images/logo.svg' styleName="App-logo" alt="logo" />
           <h1 styleName="App-title">Welcome to React</h1>
         </header>
         <p styleName="App-intro">
