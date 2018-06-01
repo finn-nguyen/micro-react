@@ -149,7 +149,19 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-              
+              plugins: [
+                [
+                  'react-css-modules',
+                  {
+                    "generateScopedName": "[path]___[name]__[local]___[hash:base64:5]",
+                    "filetypes": {
+                      ".scss": {
+                        "syntax": "postcss-scss"
+                      }
+                    }
+                  }
+                ]
+              ],
               compact: true,
             },
           },
@@ -183,6 +195,8 @@ module.exports = {
                         importLoaders: 1,
                         minimize: true,
                         sourceMap: shouldUseSourceMap,
+                        modules: true,
+                        localIdentName: '[path]___[name]__[local]___[hash:base64:5]'
                       },
                     },
                     {
