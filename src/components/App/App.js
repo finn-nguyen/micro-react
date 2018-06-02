@@ -1,7 +1,18 @@
+// @flow
+
 import React from 'react'
 import './App.scss'
 
-class App extends React.Component {
+type SampleProps = {
+  text: string
+}
+
+const Sample = (props: SampleProps) => {
+  const { text } = props
+  return <div>{text}</div>
+}
+
+class App extends React.Component<void> {
   render () {
     return (
       <div styleName='App'>
@@ -12,6 +23,7 @@ class App extends React.Component {
         <p styleName='App-intro'>
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <Sample text='Hello World' />
       </div>
     )
   }
