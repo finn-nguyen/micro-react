@@ -4,7 +4,7 @@
   "private": true,
   "main": "server.js",
   "engines": {
-    "node": ">=8 <10"
+    "node": "8.x.x"
   },
   "dependencies": {
     "autoprefixer": "7.1.6",
